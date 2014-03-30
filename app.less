@@ -5,16 +5,17 @@
 
 /* Component LESS */
 @import "partial/main/main.less";
-@import "directive/news10comp/news10comp.less";
+@import "directive/news10timeline/news10timeline.less";
 
-@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans:400,500);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700);
+
 /* Add Component LESS Above */
 
 /* Required for Angular UI Bootstrap */
 .nav, .pagination, .carousel a { cursor: pointer; }
 
-body {
-	font-family: 'Alegreya Sans', sans-serif;
+html,body,h1,h2,h3 {
+	font-family: 'Ubuntu Mono', sans-serif;
 }
 /* Personal preference for BS modal.  The LESS below makes the backdrop white and
    causes the modal to fade in rather than slide in. */
