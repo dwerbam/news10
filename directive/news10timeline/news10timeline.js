@@ -33,6 +33,32 @@ angular.module('news10').directive('news10timeline', ['$http', '$rootScope',
 
                 };
 
+                scope.togglethis = function(it, evt) {
+                    if (!it.opened) {
+                        it.opened = true;
+                        $(evt.target).next().hide();
+                        $rootScope.safeApply(scope);
+                    }
+
+                    setTimeout(function() {
+                        $(evt.target).next().slideToggle();
+
+                    }, 0);
+                };
+
+                scope.parseimg = function(newsit) {
+                    if (typeof newsit['media:content'] === "undefined") {
+                        return "static/img/rss.png";
+                    }
+
+                    var url = newsit['media:content'].url;
+                    if (url) {
+                        return url;
+                    }
+
+                    return "static/img/rss.png";
+                };
+
                 scope.loadfeed = function() {
 
 

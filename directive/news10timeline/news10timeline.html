@@ -24,9 +24,13 @@
             	<a href="{{newsit.link}}" target="_blank">
             		<i class="fa fa-anchor fa-2x pull-right"></i>
             	</a>
-				<h2>{{newsit.title}}</h2>
-        		
-            	<div ng-bind-html="newsit.description"></div>
+				
+                <div ng-click="togglethis(newsit, $event)" class="newstitle unselectable">
+                    <img class="newsimg" src="{{ parseimg(newsit) }}">
+                    {{newsit.title}}
+        		</div>
+
+            	<div class="newsdetail" ng-show="newsit.opened" ng-bind-html="newsit.description"></div>
             	
             
             </div>
