@@ -1,0 +1,36 @@
+<div class="news10timeline">
+
+	<div class="pull-right">
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" ng-model="searchpattern" class="form-control" placeholder="Filter news by title or description..">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        </form>
+    </div>
+    <div class="clearfix"></div>
+
+    <div ng-show="processing"><i class="fa fa-spinner fa-spin fa-4x"></i></div>
+
+ 	<ul class="cbp_tmtimeline example-animate-container">
+        <li class="animate-repeat" ng-repeat="newsit in filtered()">
+            <time class="cbp_tmtime">
+            	<span>{{newsit.pubDate}}</span>
+            </time>
+            <div class="cbp_tmlabel">
+				
+            	<a href="{{newsit.link}}" target="_blank">
+            		<i class="fa fa-anchor fa-2x pull-right"></i>
+            	</a>
+				<h2>{{newsit.title}}</h2>
+        		
+            	<div ng-bind-html="newsit.description"></div>
+            	
+            
+            </div>
+        </li>
+    </ul>
+    <div ng-show="filteredsize==0">Filter too restrictive!</div>
+</div>
